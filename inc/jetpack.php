@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package HumanX
+ * @package chocoSec
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function humanx_jetpack_setup() {
+function chocoSec_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'humanx_infinite_scroll_render',
+			'render'    => 'chocoSec_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function humanx_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'humanx-style',
+				'stylesheet' => 'chocoSec-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,13 +48,13 @@ function humanx_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'humanx_jetpack_setup' );
+add_action( 'after_setup_theme', 'chocoSec_jetpack_setup' );
 
-if ( ! function_exists( 'humanx_infinite_scroll_render' ) ) :
+if ( ! function_exists( 'chocoSec_infinite_scroll_render' ) ) :
 	/**
 	 * Custom render function for Infinite Scroll.
 	 */
-	function humanx_infinite_scroll_render() {
+	function chocoSec_infinite_scroll_render() {
 		while ( have_posts() ) {
 			the_post();
 			if ( is_search() ) :
