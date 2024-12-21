@@ -10,7 +10,7 @@
                         <span>Énergie et Saveurs Naturelles</span>
                         <h1>Fruits Secs</h1>
                     </div>
-                    <a href="<?php echo home_url('/product-category/fruits-secs'); ?>" class="btn-1"
+                    <a href="<?php echo home_url('/product-category/fruits-secs'); ?>" class="btn-1 mt-2"
                         aria-label="Voir nos fruits secs">Nos fruits secs</a>
                 </div>
                 <div class="col-sm-12 col-md-4">
@@ -36,7 +36,7 @@
                         <span>Naturels et Nutritifs</span>
                         <h1>Fruits Séchés</h1>
                     </div>
-                    <a href="<?php echo home_url('/product-category/fruits-seches'); ?>" class="btn-1"
+                    <a href="<?php echo home_url('/product-category/fruits-seches'); ?>" class="btn-1 mt-2"
                         aria-label="Voir nos fruits séchés">Nos fruits séchés</a>
                 </div>
                 <div class="col-sm-12 col-md-4">
@@ -62,7 +62,7 @@
                         <span>Plaisir Gourmand</span>
                         <h1>Chocolat</h1>
                     </div>
-                    <a href="<?php echo home_url('/product-category/chocolats'); ?>" class="btn-1"
+                    <a href="<?php echo home_url('/product-category/chocolats'); ?>" class="btn-1 mt-2"
                         aria-label="Voir nos chocolats">Nos chocolatés</a>
                 </div>
                 <div class="col-sm-12 col-md-4">
@@ -80,8 +80,9 @@
         </div>
     </div>
 
-    <!-- Flèches de navigation -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"
+    <div class="container navigation-carousel-control">
+<!-- Flèches de navigation -->
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"
         aria-label="Slide précédent">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Précédent</span>
@@ -99,4 +100,6 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Suivant</span>
     </button>
+    </div>
+    
 </div>
