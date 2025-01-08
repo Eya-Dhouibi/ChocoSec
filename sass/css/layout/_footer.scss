@@ -1,0 +1,147 @@
+@use '../partials/_variables' as *;
+@use '../partials/mixins' as *;
+
+.footer {
+	color: #4c1d01;
+	background: linear-gradient(-90deg, rgba(193, 109, 72, 0.8) 0%, rgba(248, 201, 149, 0.9) 50%, rgba(236, 184, 136, 0.9) 100%),
+	  url('../../assets/img/bg-footer.jpg') no-repeat center;
+	background-size: cover;
+	font-size: 14px;
+	padding-bottom: 50px;
+	position: relative;
+  
+	.footer-top {
+	  padding-top: 50px;
+	}
+  
+	.footer-about {
+	  .logo {
+		line-height: 1;
+		margin-bottom: 25px;
+  
+		img {
+		  max-height: 40px;
+		  margin-right: 6px;
+		}
+  
+		span {
+		  font-size: 26px;
+		  font-weight: 700;
+		  letter-spacing: 1px;
+		  color: #492002;
+		}
+	  }
+  
+	  p {
+		font-size: 14px;
+	  }
+	}
+  
+	.social-links {
+	  a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		border: 1px solid rgba(76, 29, 1, 0.5);
+		font-size: 16px;
+		color: rgba(76, 29, 1, 0.3);
+		margin-right: 10px;
+		transition: all 0.3s ease;
+  
+		&:hover {
+		  color: #9b6c22;
+		  border-color: #9b6c22;
+		}
+	  }
+	}
+  
+	h4 {
+	  font-size: 16px;
+	  font-weight: bold;
+	  position: relative;
+	  padding-bottom: 12px;
+	}
+  
+	.footer-links {
+	  margin-bottom: 30px;
+  
+	  ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+  
+		li {
+		  padding: 10px 0;
+		  display: flex;
+		  align-items: center;
+  
+		  &:first-child {
+			padding-top: 0;
+		  }
+  
+		  a {
+			color: rgba(76, 29, 1, 0.3);
+			text-decoration: none;
+			transition: color 0.3s ease;
+  
+			&:hover {
+			  color: #9b6c22;
+			}
+		  }
+		}
+	  }
+	}
+  
+	.footer-newsletter {
+	  .newsletter-form {
+		margin: 30px 0 15px;
+		padding: 6px 8px;
+		border-radius: 50px;
+		border: 1px solid rgba(155, 108, 34, 0.7);
+		display: flex;
+		background-color: #f8faff;
+		transition: all 0.3s ease;
+  
+		input[type="email"] {
+		  border: none;
+		  padding: 4px 10px;
+		  flex: 1;
+		  background-color: #ffffff;
+		  color: #4c1d01;
+		}
+  
+		input[type="submit"] {
+		  border: none;
+		  font-size: 16px;
+		  padding: 0 20px;
+		  background: #9b6c22;
+		  color: #ffffff;
+		  border-radius: 50px;
+		  transition: background 0.3s ease;
+		  cursor: pointer;
+  
+		  &:hover {
+			background: rgba(155, 108, 34, 0.8);
+		  }
+		}
+	  }
+	}
+  
+	.copyright {
+	  padding: 25px 0;
+	  border-top: 1px solid rgba(76, 29, 1, 0.1);
+  
+	  p {
+		margin-bottom: 0;
+	  }
+	}
+  
+	.credits {
+	  margin-top: 6px;
+	  font-size: 13px;
+	}
+  }
+  

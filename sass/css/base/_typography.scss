@@ -1,0 +1,20 @@
+@use '../partials/_variables' as *;
+@use '../partials/mixins' as *;
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-heading;
+    color:$color-heading;
+  }
+  
+  // Body
+  body {
+    color:$color-default;
+    background-color: $white;
+    font-family: $font-heading;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 24px;
+  }
+  
+  
+  

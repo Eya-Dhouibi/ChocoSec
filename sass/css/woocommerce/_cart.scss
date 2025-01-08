@@ -1,0 +1,99 @@
+@use '../partials/_variables' as *;
+@use '../partials/mixins' as *;
+.header-icons .cart-count {
+    position: absolute;
+    top: -24px;
+    right: -16px;
+    background: #ff0000;
+    color: #fff;
+    border-radius: 50%;
+    padding: 0 8px;
+    font-size: 10px;
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.cart-overlay.show {
+  display: block;
+  opacity: 1;
+}
+
+.woocommerce-cart-form__cart-item.cart_item {
+  padding: .75rem 0;
+}
+.product-remove a span {
+  color: red;
+}
+/* Style pour le menu du panier */
+.cart-menu {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  max-width: 300px;
+  width: 100%;
+  height: 100%;
+  background-color: #f9f9f9; 
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.cart-menu.show {
+  display: block;
+}
+
+/* Boutons d'actions */
+.cart-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+.cart-actions .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Items dans le panier */
+.cart-items ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cart-items li {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-add-to-cart-btn a {
+display: block;
+width: 100%;
+height: 100%;
+}
+
+.custom-add-to-cart-btn span.material-symbols-outlined {
+  background:$color-accent;
+  padding: 12px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}

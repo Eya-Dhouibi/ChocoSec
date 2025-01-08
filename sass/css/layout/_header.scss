@@ -1,0 +1,74 @@
+@use '../partials/_variables' as *;
+@use '../partials/mixins' as *;
+/* Header Wrapper */
+  .header-wrapper {
+    width: 100%;
+    position: relative;
+    transition: all 0.5s $transition-smooth;
+    z-index: 999;
+    background-color: transparent;
+  }
+  
+  .header-wrapper.sticky-top {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: top $transition-smooth, background-color $transition-smooth;
+  }
+  
+  .header-wrapper.sticky-header {
+    background: $primary-gradient;
+    box-shadow: $shadow-light;
+  }
+  
+  /* Inner Page Header */
+  .inner-page-header {
+    background: $primary-gradient;
+    position: relative;
+    min-height: auto;
+  }
+  
+  /* Header Icons */
+  .header-icons a {
+    position: relative;
+    transition: color $transition-smooth;
+  }
+  
+  .header-icons a:hover {
+    color: #9b6c22; /* Couleur sur survol */
+  }
+  
+  /* Navbar Toggler */
+  .navbar-toggler {
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: 0;
+  }
+  
+  /* Topbar Mobile */
+  .mobile-topbar {
+    position: relative;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Masquage des éléments inutiles */
+  #wpadminbar,
+  header.entry-header {
+    display: none;
+  }
+  
+  /* Contact dans la Topbar */
+  .mobile-topbar .topbar-contact span:first-child {
+    font-size: 18px;
+  }
+  
+  /* Compatibilité et Responsivité */
+  .topbar-header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }

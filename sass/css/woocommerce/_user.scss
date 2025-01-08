@@ -1,0 +1,49 @@
+@use '../partials/_variables' as *;
+@use '../partials/mixins' as *;
+.user-account {
+    position: relative;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 8px 24px;
+    width: 200px; 
+	border-radius: 15px;
+}
+
+.user-dropdown nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user-dropdown nav ul li {
+    margin: 8px 0;
+}
+
+.user-dropdown nav ul li a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+.user-dropdown nav ul li a:hover{
+	color: var(--accent-color);
+}
+.user-account:hover .user-dropdown {
+    display: block;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation {
+    float: left;
+    width: 100%;
+}
+
+
+.user-dropdown.active {
+    display: block;
+}

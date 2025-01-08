@@ -1,10 +1,10 @@
 <section class="section">
-    <div class="container-lg">
+    <div class="container container-lg">
         <div class="banner-blocks">
 
             <!-- Fruits Secs -->
             <div class="banner-ad block-1">
-                <a href="<?php echo home_url('/product-category/fruits-secs'); ?>" class="text-decoration-none">
+                <a href="<?php echo home_url('/product-category/epicerie/fruits-secs'); ?>" class="text-decoration-none">
                     <div class="banner-content p-5">
                         <div class="content-wrapper text-light">
                             <h3 class="banner-title text-light">Fruits Secs en Promotion</h3>
@@ -17,7 +17,7 @@
 
             <!-- Fruits Séchés -->
             <div class="banner-ad block-2">
-                <a href="<?php echo home_url('/product-category/fruits-seches'); ?>" class="text-decoration-none">
+                <a href="<?php echo home_url('/product-category/epicerie/fruits-seches'); ?>" class="text-decoration-none">
                     <div class="banner-content align-items-center p-5">
                         <div class="content-wrapper text-light">
                             <h3 class="banner-title text-light">Fruits Séchés en Promotion</h3>
@@ -30,7 +30,7 @@
 
             <!-- Chocolat -->
             <div class="banner-ad block-3">
-                <a href="<?php echo home_url('/product-category/chocolats'); ?>" class="text-decoration-none">
+                <a href="<?php echo home_url('/product-category/epicerie/chocolats'); ?>" class="text-decoration-none">
                     <div class="banner-content align-items-center p-5">
                         <div class="content-wrapper text-light">
                             <h3 class="banner-title text-light">Chocolats Artisanaux</h3>

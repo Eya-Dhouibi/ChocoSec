@@ -1,0 +1,228 @@
+@use '../partials/_variables' as *;
+@use '../partials/mixins' as *;
+
+// Hero Section
+#carouselExampleCaptions {
+  margin-top: -80px;
+}
+
+// Carousel Items
+.slide-item {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+
+  .container {
+    min-height: auto;
+    padding-top: 108px;
+    padding-bottom: 80px;
+  }
+
+  img {
+    height: auto;
+    width: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    @include animation(zoomEffect, 1s, infinite ease-in-out);
+  }
+
+  .title-1 {
+    h1 {
+      font-weight: 800;
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      text-shadow: 2px 2px 4px rgba($black, 0.3);
+      font-style: italic;
+      text-align: left;
+      pointer-events: none;
+      background: transparent;
+    }
+
+    span {
+      color: #431804;
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: 4px;
+    }
+  }
+}
+
+// Slide Content
+.slide-content {
+  @include animation(fadeInRight, 1s, ease);
+
+  .btn-1 {
+    background-color: transparent;
+    color: $white;
+    border: 2px solid $white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-color: $btn-hover-bg;
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Text Heart
+.text-heart {
+  position: relative;
+  z-index: 5;
+  margin: auto;
+  text-align: center;
+  @include animation(fadeInLeft, 1s, ease);
+}
+
+.text-heart p {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  margin-bottom: 30px;
+}
+
+// Carousel Overlay
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 782px;
+  background: transparent;
+  z-index: -1;
+  transition: background 1s ease;
+
+  &.slide-1 {
+    background: radial-gradient(circle, rgba(115, 64, 17, 0.2) 0%, rgb(155, 112, 64) 50%, rgb(65, 33, 1) 100%);
+  }
+
+  &.slide-2 {
+    background: radial-gradient(circle, rgba(157, 88, 61, 0.2) 0%, rgb(171, 39, 148) 50%, rgb(65, 1, 54) 100%);
+  }
+
+  &.slide-3 {
+    background: radial-gradient(circle, rgba(117, 80, 56, 0.2) 0%, rgb(197, 121, 82) 50%, rgb(65, 33, 1) 100%);
+  }
+}
+
+// Indicators (Dots)
+.carousel .slick-dots {
+  gap: 8px;
+  padding: 0;
+  bottom: 24px;
+
+  button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba($white, 0.5);
+    transition: background-color 0.3s ease;
+
+    &[data-bs-target] {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+// Navigation Arrows
+.carousel .slick-prev.slick-arrow,
+.carousel .slick-next.slick-arrow {
+  width: 1.25rem;
+  height: 1.15rem;
+  filter: drop-shadow(0 2px 4px rgba($black, 0.5));
+  opacity: 1;
+  background: transparent;
+  position: absolute;
+
+  span {
+    font-size: 24px !important;
+  }
+}
+
+.carousel .slick-prev.slick-arrow {
+  left: 2rem;
+}
+
+// Keyframes
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Responsive Styles
+@media (max-width: 768px) {
+  .slide-content {
+    text-align: center;
+  }
+
+  .slide-item img {
+    max-width: 80%;
+    margin: 24px auto;
+    display: flex;
+  }
+
+  .slide-item .title-1 h1 {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  .hero .hero-img {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .text-heart {
+    padding-left: 5rem;
+    text-align: left;
+  }
+
+  .cart-menu {
+    max-width: 300px;
+  }
+  .carousel .slick-prev.slick-arrow,
+.carousel .slick-next.slick-arrow{
+  top: auto;
+  bottom: 50px;
+}
+.carousel .slick-next.slick-arrow {
+  left: 145px;
+}
+.carousel .slick-dots {
+  bottom: 58px;
+  width: fit-content;
+  padding-left: 70px;
+}
+}

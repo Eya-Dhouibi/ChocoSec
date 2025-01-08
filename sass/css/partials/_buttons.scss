@@ -1,0 +1,91 @@
+@use '_variables' as *;
+@use '_mixins' as *;
+// Effets de focus et de transition
+$btn-focus-box-shadow: 0 0 0 4px rgba($color-primary, 0.3);
+$btn-focus-outline: none;
+$btn-transition: background-color 0.3s ease, border-color 0.3s ease;
+
+// Styles communs pour tous les boutons
+.btn {
+  display: inline-block;
+  padding: $btn-padding;
+  font-size: $btn-font-size;
+  font-family: $font-default;
+  font-weight: $btn-font-weight;
+  border-radius: $btn-border-radius;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: $btn-transition;
+
+  &:focus {
+    outline: $btn-focus-outline;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  &:disabled {
+    background-color: $color-bg;
+    color: $color-default;
+    cursor: not-allowed;
+  }
+}
+
+// Bouton primaire
+.btn-primary {
+  background-color: $btn-primary-bg;
+  color: $btn-primary-color;
+  border: 1px solid $btn-primary-border;
+
+  &:hover {
+    background-color: $btn-primary-hover-bg;
+  }
+
+  &:active {
+    background-color: $btn-primary-active-bg;
+  }
+}
+
+// Bouton secondaire
+.btn-secondary {
+  background-color: $btn-secondary-bg;
+  color: $btn-secondary-color;
+  border: 1px solid $btn-secondary-border;
+
+  &:hover {
+    background-color: $color-primary-light;
+    color: $white;
+    border-color: $color-primary-light;
+  }
+
+  &:active {
+    background-color: $color-primary-dark;
+  }
+}
+
+// Bouton de formulaire
+.btn-form-submit {
+  background-color: $form-btn-bg;
+  color: $form-btn-color;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: $form-btn-hover-bg;
+  }
+
+  &:active {
+    background-color: $color-primary-dark;
+  }
+}
+
+// Icônes dans les boutons
+.material-symbols-outlined {
+  color: $white;
+}
+
+// Adaptation pour les petits écrans
+@media (max-width: 768px) {
+  .btn {
+    padding: 14px 28px;
+    font-size: 18px;
+  }
+}

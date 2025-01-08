@@ -1,0 +1,64 @@
+@use '../partials/_variables' as *;
+@use '../partials/mixins' as *;
+.input-group {
+  position: relative;
+}
+
+#search-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.search-input {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  max-width: 760px;
+  display: none;
+  padding: 8px 20px;
+  animation: fadeInDown 0.5s ease;
+  z-index: 1001;
+  visibility: hidden;
+}
+
+.search-input.show {
+  display: flex;
+  visibility: visible;
+}
+
+@keyframes fadeInDown {
+  0% {
+      opacity: 0;
+      transform: translateY(-24px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.search-bar .form-select {
+  padding: 0.25rem 0.75rem;
+  background-color: #f3e9da;
+  width: 65%;
+  border-radius: 15px 0 0 15px;
+  border: none;
+}
+
+#button-search {
+  background-color: red;
+  border-radius: 0 15px 15px 0;
+  padding: 6px 12px;
+  border: none; 
+}
+
+input#search-input {
+  padding: 9px;
+  border: none;
+  border-radius: 15px 0 0 15px;
+}
+
+#search-input::placeholder {
+  font-size: 14px;
+  color: #aaa; 
+}

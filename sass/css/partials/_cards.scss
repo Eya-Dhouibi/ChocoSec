@@ -1,0 +1,88 @@
+@use './variables' as *;
+@use './_mixins' as *;
+.card {
+    background-color: $card-bg;
+    border: 1px solid $card-border-color;
+    border-radius: $card-border-radius;
+    box-shadow: $card-shadow;
+    overflow: hidden;
+    font-family: $font-default;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    @include section-padding(3rem);
+    @include box-shadow(0, 4px, 8px, 0, rgba(0, 0, 0, 0.2));
+    //@include typography('Arial', #333, 1.2rem);
+  
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 8px rgba($black, 0.2);
+      @include hover-effect(background-color,#5e5e5e);
+    }
+  
+    @include respond-to(medium) {
+      padding: 2rem;
+    }
+
+      // Contenu de la carte
+  .card-body {
+    padding: $card-padding;
+    color: $color-default;
+  }
+
+  // En-tête de la carte
+  .card-header {
+    background-color: $card-header-bg;
+    color: $card-header-color;
+    font-weight: 700;
+    padding: $card-padding;
+    border-bottom: 1px solid $card-border-color;
+  }
+
+  // Pied de la carte
+  .card-footer {
+    background-color: $card-footer-bg;
+    color: $card-footer-color;
+    font-weight: 600;
+    padding: $card-padding;
+    border-top: 1px solid $card-border-color;
+    text-align: center;
+  }
+
+  }
+
+// Variantes des cartes
+.card-primary {
+  border-color: $color-primary;
+  .card-header {
+    background-color: $color-primary;
+    color: $white;
+  }
+  .card-footer {
+    background-color: $color-primary-dark;
+  }
+}
+
+.card-secondary {
+  border-color: $color-primary-light;
+  .card-header {
+    background-color: $color-primary-light;
+    color: $color-heading;
+  }
+  .card-footer {
+    background-color: $color-primary;
+    color: $white;
+  }
+}
+
+// Responsivité pour les petites cartes
+@media (max-width: 768px) {
+  .card {
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .card-header,
+  .card-footer {
+    padding: 8px;
+    font-size: 14px;
+  }
+}

@@ -1,8 +1,6 @@
 <?php
 /**
  * Template pour afficher le contenu des produits dans les boucles
- * 
- * Ce modèle peut être surchargé en copiant ce fichier dans yourtheme/woocommerce/content-product.php.
  *
  * @package WooCommerce\Templates
  * @version 3.6.0
@@ -39,7 +37,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 	// Bouton d'ajout au panier
 	echo '<div class="add-to-cart mt-3">';
-	do_action( 'woocommerce_after_shop_loop_item' );
+	custom_add_to_cart_button(); 
 	echo '</div>';
+	
 	?>
 </li>

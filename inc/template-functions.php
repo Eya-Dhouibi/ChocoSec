@@ -35,3 +35,17 @@ function chocoSec_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'chocoSec_pingback_header' );
+
+
+/**
+ * Add lazy loading to images
+ */
+function add_lazy_loading_to_images($content) {
+    $content = preg_replace('/<img(.*?)>/i', '<img$1 loading="lazy">', $content);
+    return $content;
+}
+add_filter('the_content', 'add_lazy_loading_to_images');
+add_filter('widget_text', 'add_lazy_loading_to_images');
+add_filter('widget_text_content', 'add_lazy_loading_to_images');
+add_filter('post_thumbnail_html', 'add_lazy_loading_to_images');
+

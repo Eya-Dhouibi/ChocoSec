@@ -1,0 +1,87 @@
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: 576px) { @content; }
+  } @else if $breakpoint == medium {
+    @media (max-width: 768px) { @content; }
+  } @else if $breakpoint == large {
+    @media (max-width: 992px) { @content; }
+  } @else if $breakpoint == xlarge {
+    @media (max-width: 1200px) { @content; }
+  }
+}
+
+@mixin box-shadow($x: 0, $y: 2px, $blur: 4px, $spread: 0, $color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin background-image($url, $position: center, $size: cover) {
+  background: url($url) no-repeat;
+  background-size: $size;
+  background-position: $position;
+}
+
+@mixin border-style($color, $width: 1px, $style: solid) {
+  border: $width $style $color;
+}
+
+@mixin flex-center($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin animation($name, $duration, $timing-function: ease) {
+  animation: $name $duration $timing-function;
+}
+
+@mixin transition-effect($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+@mixin section-padding($padding: 2rem, $overflow: clip) {
+  padding: $padding 0;
+  overflow: $overflow;
+}
+
+
+@mixin typography($font-family, $color, $font-size, $font-weight) {
+  font-family: $font-family;
+  color: $color;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+@mixin button($bg-color, $text-color, $hover-bg-color: lighten($bg-color, 10%)) {
+  background-color: $bg-color;
+  color: $text-color;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+}
+
+@mixin gradient-bg($gradient-colors, $image-url, $size: cover, $position: top left) {
+  background: linear-gradient($gradient-colors), url($image-url) no-repeat;
+  background-size: $size;
+  background-position: $position;
+}
+
+@mixin transition-effect($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+@mixin circle($size, $bg-color: transparent) {
+  width: $size;
+  height: $size;
+  background-color: $bg-color;
+  border-radius: 50%;
+}
+
+@mixin hover-effect($property, $value, $transition: 0.3s ease) {
+  transition: $property $transition;
+
+  &:hover {
+    #{$property}: $value;
+  }
+}

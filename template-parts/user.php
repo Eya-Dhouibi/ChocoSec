@@ -9,7 +9,7 @@
     <!-- Menu dropdown -->
     <div class="user-dropdown">
         <?php 
-        if (!is_user_logged_in()) {
+        if (is_user_logged_in()) {
             // Si l'utilisateur est connecté, inclure la navigation WooCommerce
             $navigation_template = get_template_directory() . '/woocommerce/myaccount/navigation.php';
             if (file_exists($navigation_template)) {

@@ -1,0 +1,152 @@
+@use '../partials/_variables' as *;
+@use '../partials/mixins' as *;
+
+// Global Section Titles
+.section-title {
+  text-align: center;
+  position: relative;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: $color-accent;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// Global Page Titles & Breadcrumbs
+.page-title {
+  --background-color: color-mix(in srgb, var(--color-primary), $transparent-color 96%);
+  color: var(--color-primary);
+  background-color: var(--background-color);
+  padding: 25px 0;
+  position: relative;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .breadcrumbs {
+    ol {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+
+      li + li {
+        padding-left: 10px;
+
+        &::before {
+          content: "/";
+          display: inline-block;
+          padding-right: 10px;
+          color: color-mix(in srgb, var(--color-primary), $transparent-color 70%);
+        }
+      }
+    }
+  }
+}
+
+h1.entry-title {
+  display: none;
+}
+
+img[data-src] {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img[data-src][src] {
+  opacity: 1;
+}
+
+
+// Global Sections
+section,
+.section {
+  @include section-padding;
+}
+
+// Section Banner
+.banner-blocks {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 24px;
+
+  .block-1 {
+    @include background-image('../../assets/img/fruits-secs.png', left bottom);
+  }
+  .block-2 {
+    @include background-image('../../assets/img/fruits-seches.png', left bottom);
+  }
+
+  .block-3 {
+    @include background-image('../../assets/img/bg-chocolat.jpg', left bottom);
+  }
+}
+
+@media (min-width: 768px) {
+  .banner-blocks {
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .block-1 {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+
+  .block-2 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .block-3 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+}
+
+@media (max-width: 992px) {
+  
+	section,
+	.section {
+	  scroll-margin-top: 66px;
+	}
+
+    .container, .container-sm {
+        max-width: 960px !important;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+    .main-nav-content {
+      position: absolute;
+      left: -24px;
+  }
+  .site-branding img {
+    max-width: 165px;
+    height: auto;
+}
+.header-wrapper {
+  padding-top: 1rem;
+}
+}
