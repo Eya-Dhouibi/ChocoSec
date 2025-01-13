@@ -6,7 +6,7 @@ $btn-focus-outline: none;
 $btn-transition: background-color 0.3s ease, border-color 0.3s ease;
 
 // Styles communs pour tous les boutons
-.btn {
+.btn-1 {
   display: inline-block;
   padding: $btn-padding;
   font-size: $btn-font-size;
@@ -17,6 +17,8 @@ $btn-transition: background-color 0.3s ease, border-color 0.3s ease;
   text-decoration: none;
   cursor: pointer;
   transition: $btn-transition;
+  background-color: inherit;
+  border: none;
 
   &:focus {
     outline: $btn-focus-outline;
@@ -31,10 +33,11 @@ $btn-transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 // Bouton primaire
-.btn-primary {
+.btn-primary-color {
   background-color: $btn-primary-bg;
   color: $btn-primary-color;
   border: 1px solid $btn-primary-border;
+
 
   &:hover {
     background-color: $btn-primary-hover-bg;
@@ -46,7 +49,7 @@ $btn-transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 // Bouton secondaire
-.btn-secondary {
+.btn-secondary-color {
   background-color: $btn-secondary-bg;
   color: $btn-secondary-color;
   border: 1px solid $btn-secondary-border;

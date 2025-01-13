@@ -117,6 +117,13 @@ a.nav-link:focus:hover {
   li.menu-item {
     padding: 4px;
   }
+  button.navbar-toggler {
+    position: absolute;
+    left: -24px;
+}
+.main-nav-content .navbar{
+  position: static;
+}
 }
 
 @media (min-width: 992px) {
@@ -157,11 +164,11 @@ a.nav-link:focus:hover {
 
   .dropdown-img {
     display: block;
-    max-width: 80px !important;
+    max-width: 60px !important;
     margin-right: 16px;
   }
 
-  .menu-item .dropdown-menu {
+  .menu-item .dropdown-menu[data-bs-popper] {
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
@@ -178,7 +185,7 @@ a.nav-link:focus:hover {
   ul.dropdown-menu.row.gap-3.show {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    height: 512px;
+    height: 442px;
   }
 
   .menu-item ul.dropdown-menu.dropdown-depth-1 {
@@ -194,6 +201,10 @@ a.nav-link:focus:hover {
 
   li.menu-item {
     padding: 4px 12px;
+  }
+
+  .dropdown-menu li.menu-item {
+    width: 100%;
   }
 
   #menu-item-81 .dropdown-toggle::after,

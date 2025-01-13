@@ -11,7 +11,7 @@
                         <h1>Fruits Secs</h1>
                     </div>
                     <a href="<?php echo home_url('/product-category/epicerie/fruits-secs'); ?>"
-                        class="btn btn-primary mt-2" aria-label="Voir nos fruits secs">Nos fruits secs</a>
+                        class="btn-1 btn-primary-color mt-2" aria-label="Voir nos fruits secs">Nos fruits secs</a>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <img width="343" height="408"
@@ -37,7 +37,7 @@
                         <h1>Fruits Séchés</h1>
                     </div>
                     <a href="<?php echo home_url('/product-category/epicerie/fruits-seches'); ?>"
-                        class="btn btn-primary mt-2" aria-label="Voir nos fruits séchés">Nos fruits séchés</a>
+                        class="btn-1 btn-primary-color mt-2" aria-label="Voir nos fruits séchés">Nos fruits séchés</a>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <img width="403" height="408"
@@ -63,7 +63,7 @@
                         <h1>Chocolat</h1>
                     </div>
                     <a href="<?php echo home_url('/product-category/epicerie/chocolats'); ?>"
-                        class="btn btn-primary mt-2" aria-label="Voir nos chocolats">Nos chocolatés</a>
+                        class="btn-1 btn-primary-color mt-2" aria-label="Voir nos chocolats">Nos chocolatés</a>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <img width="355" height="408"

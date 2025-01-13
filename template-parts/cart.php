@@ -8,9 +8,8 @@
     <!-- Overlay pour le fond sombre -->
     <div id="cart-overlay" class="cart-overlay"></div>
 
-    <?php if (WC()->cart->get_cart_contents_count() > 0) : ?>
     <div id="cart-menu" class="cart-menu">
-        
+        <?php if (WC()->cart->get_cart_contents_count() > 0) : ?>
         <!-- Liste des Articles du Panier -->
         <div class="cart-items">
             <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
@@ -27,8 +26,8 @@
                     <li class="pb-2">
 
                         <div class="cart-item">
-                                <div class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
-                                    <?php
+                            <div class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+                                <?php
                                     if ( ! $product_permalink ) {
                                         echo wp_kses_post( $product_name . '&nbsp;' );
                                     } else {
@@ -41,11 +40,12 @@
                                         echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
                                     }
                                     ?>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between gap-3 woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-                            <!-- Image du Produit -->
-                            <div class="product-image-cart">
-                                <?php
+                            </div>
+                            <div
+                                class="d-flex align-items-center justify-content-between gap-3 woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+                                <!-- Image du Produit -->
+                                <div class="product-image-cart">
+                                    <?php
                                 $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
                                 if ( ! $product_permalink ) {
@@ -54,12 +54,13 @@
                                     printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail );
                                 }
                                 ?>
-                            </div>
+                                </div>
 
-                            <div class="product-content d-flex flex-column flex-grow-1 flex-wrap">
-                                <!-- Quantité du produit -->
-                                <div class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
-						<?php
+                                <div class="product-content d-flex flex-column flex-grow-1 flex-wrap">
+                                    <!-- Quantité du produit -->
+                                    <div class="product-quantity"
+                                        data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
+                                        <?php
 						if ( $_product->is_sold_individually() ) {
 							$min_quantity = 1;
 							$max_quantity = 1;
@@ -82,7 +83,8 @@
 
 						echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 						?>
-						</div>
+                                    </div>
+                                </div>
 
                                 <!-- Prix et Sous-total -->
                                 <div class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
@@ -90,11 +92,10 @@
                                     echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
                                     ?>
                                 </div>
-                            </div>
 
-                            <!-- Suppression du Produit -->
-                            <div class="product-remove">
-                                <?php
+                                <!-- Suppression du Produit -->
+                                <div class="product-remove">
+                                    <?php
                                 echo apply_filters(
                                     'woocommerce_cart_item_remove_link',
                                     sprintf(
@@ -109,7 +110,7 @@
                                     $cart_item_key
                                 );
                                 ?>
-                            </div>
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -123,14 +124,30 @@
 
         <!-- Collatéraux du Panier -->
         <div class="cart-collaterals">
-            <?php do_action( 'woocommerce_cart_collaterals' ); ?>
+            <div class="cart-totals">
+                <!-- Total TVA -->
+                <div class="cart-total-tax">
+                    <span class="cart-label"><?php esc_html_e( 'Total TVA', 'chocoSec' ); ?>:</span>
+                    <span class="cart-amount"><?php echo WC()->cart->get_cart_tax(); ?></span>
+                </div>
+
+                <!-- Total TTC -->
+                <div class="cart-total">
+                    <span class="cart-label"><?php esc_html_e( 'Total TTC', 'chocoSec' ); ?>:</span>
+                    <span class="cart-amount"><?php echo WC()->cart->get_total(); ?></span>
+                </div>
+            </div>
         </div>
 
         <!-- Actions du Panier -->
         <div class="cart-actions">
-            <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-primary"><?php esc_html_e('View Cart', 'chocoSec'); ?></a>
-            <a href="<?php echo wc_get_checkout_url(); ?>" class="btn btn-success"><?php esc_html_e('Checkout', 'chocoSec'); ?></a>
+            <a href="<?php echo wc_get_cart_url(); ?>"
+                class="btn btn-primary"><?php esc_html_e('Voir le panier', 'chocoSec'); ?></a>
+            <a href="<?php echo wc_get_checkout_url(); ?>"
+                class="btn btn-success"><?php esc_html_e('Valider la commande', 'chocoSec'); ?></a>
         </div>
+        <?php else: ?>
+        <p class="text-center"><?php esc_html_e('Votre panier est vide', 'chocoSec'); ?></p>
+        <?php endif; ?>
     </div>
-    <?php endif; ?>
 </div>

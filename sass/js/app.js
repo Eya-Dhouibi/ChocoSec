@@ -179,37 +179,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (slider) {
     jQuery(slider).slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 3000,
-      arrows: true,
-      dots: true,
+      slidesToShow: 4, 
+      slidesToScroll: 1,
+      dots: true, 
       responsive: [
         {
-          breakpoint: 1024,
+          breakpoint: 480,
           settings: {
-            slidesToShow: 3,
-            arrows: true,
-            dots: true,
+            slidesToShow: 1, 
+            slidesToScroll: 1,
+            arrows: false, 
           },
         },
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 2,
+            slidesToShow: 2, 
+            slidesToScroll: 1, 
           },
         },
         {
-          breakpoint: 480,
+          breakpoint: 1024,
           settings: {
-            slidesToShow: 1,
-            arrows: false,
-            dots: true,
+            slidesToShow: 3, 
+            slidesToScroll: 1, 
           },
         },
       ],
     });
   }
-});
-
+  });

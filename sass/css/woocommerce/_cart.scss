@@ -32,7 +32,7 @@
 .woocommerce-cart-form__cart-item.cart_item {
   padding: .75rem 0;
 }
-.product-remove a span {
+.product-remove span {
   color: red;
 }
 /* Style pour le menu du panier */
@@ -40,8 +40,8 @@
   position: fixed;
   display: none;
   top: 0;
-  left: 0;
-  max-width: 300px;
+  right: 0;
+  max-width: 350px;
   width: 100%;
   height: 100%;
   background-color: #f9f9f9; 
@@ -55,15 +55,19 @@
 
 .cart-menu.show {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Boutons d'actions */
 .cart-actions {
+  display: inline-block;
   margin-top: 20px;
   text-align: center;
 }
 .cart-actions .btn {
-  display: inline-block;
+  width: 100%;
+  margin-bottom: 16px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -81,7 +85,6 @@
 }
 .cart-items li {
   margin-bottom: 15px;
-  padding: 10px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -91,9 +94,35 @@ width: 100%;
 height: 100%;
 }
 
-.custom-add-to-cart-btn span.material-symbols-outlined {
+.custom-add-to-cart-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background:$color-accent;
+  color: $white;
   padding: 12px;
   border-radius: 12px;
   transition: background-color 0.3s ease;
+  gap: 12px;
+  margin: .5rem auto;
+}
+
+// a.added_to_cart.wc-forward{
+//   display: none;
+// }
+
+.woocommerce .cart-collaterals .cart_totals, 
+.woocommerce-page .cart-collaterals .cart_totals {
+  width: 100%;
+}
+
+.cart-totals {
+  max-width: 350px;
+  float: right;
+}
+
+@media screen and (max-width:480px){
+  .cart-menu{
+    max-width: 250px;
+  }
 }

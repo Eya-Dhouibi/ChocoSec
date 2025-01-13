@@ -81,6 +81,20 @@ img[data-src][src] {
   opacity: 1;
 }
 
+.modal-content {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.modal-body {
+  text-align: center; /* Centrer le texte si nécessaire */
+  padding: 20px;
+}
+
+.modal-dialog {
+  max-width: 500px; /* Ajustez la largeur */
+  margin: auto;
+}
 
 // Global Sections
 section,
@@ -96,17 +110,20 @@ section,
   grid-gap: 24px;
 
   .block-1 {
-    @include background-image('../../assets/img/fruits-secs.png', left bottom);
+    @include background-image('../../assets/img/fruits-secs.png', center center);
   }
   .block-2 {
-    @include background-image('../../assets/img/fruits-seches.png', left bottom);
+    @include background-image('../../assets/img/fruits-seches.png', center center);
   }
 
   .block-3 {
-    @include background-image('../../assets/img/bg-chocolat.jpg', left bottom);
+    @include background-image('../../assets/img/chocolate.png', center center);
   }
 }
-
+.block-1 .banner-content{
+  max-width: 248px;
+height: 100%;
+}
 @media (min-width: 768px) {
   .banner-blocks {
     grid-template-columns: 1.5fr 1fr;
@@ -138,10 +155,7 @@ section,
         padding-left: 1.25rem !important;
         padding-right: 1.25rem !important;
     }
-    .main-nav-content {
-      position: absolute;
-      left: -24px;
-  }
+
   .site-branding img {
     max-width: 165px;
     height: auto;

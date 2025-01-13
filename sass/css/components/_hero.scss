@@ -3,7 +3,7 @@
 
 // Hero Section
 #carouselExampleCaptions {
-  margin-top: -80px;
+  margin-top: -90px;
 }
 
 // Carousel Items
@@ -123,6 +123,9 @@
       height: 12px;
     }
   }
+  li.slick-active button {
+    background: #ffffff;
+  }
 }
 
 // Navigation Arrows
@@ -136,7 +139,7 @@
   position: absolute;
 
   span {
-    font-size: 24px !important;
+    font-size: 20px !important;
   }
 }
 
@@ -200,6 +203,12 @@
   .hero .hero-img {
     max-width: 600px;
   }
+  .carousel .slick-prev.slick-arrow{
+    left: 2rem;
+  }
+  .carousel .slick-next.slick-arrow{
+    right: 2rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -221,7 +230,7 @@
   left: 145px;
 }
 .carousel .slick-dots {
-  bottom: 58px;
+  bottom: 42px;
   width: fit-content;
   padding-left: 70px;
 }

@@ -5,7 +5,7 @@
                 <div class="section-header d-flex flex-wrap justify-content-between my-4">
                     <h2 class="section-title">Produits les plus vendus</h2>
                     <div class="d-flex align-items-center">
-                        <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="btn-1">Voir tout</a>
+                        <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="btn-1 btn-secondary-color">Voir tout</a>
                     </div>
                 </div>
             </div>
